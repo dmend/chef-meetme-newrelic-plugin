@@ -1,6 +1,7 @@
 node.set[:meetme_newrelic_plugin][:postgresql][:enable] = true
 
-include_recipe "python::pip"
+include_recipe 'python'
+include_recipe 'python::pip'
 
 #install the Python PostgreSQL driver
 python_pip "psycopg2" do
