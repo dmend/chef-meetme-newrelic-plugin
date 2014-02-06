@@ -53,6 +53,17 @@ Application:
     query: <%= node[:meetme_newrelic_plugin][:php_fpm][:query] %>
 <% end %>
 
+<% if node[:meetme_newrelic_plugin][:postgresql][:enable] %>
+  postgresql: 
+    host: <%= node[:meetme_newrelic_plugin][:postgresql][:host] %>
+    port: <%= node[:meetme_newrelic_plugin][:postgresql][:port] %>
+    user: <%= node[:meetme_newrelic_plugin][:postgresql][:user] %>
+    dbname: <%= node[:meetme_newrelic_plugin][:postgresql][:dbname] %>
+    password: <%= node[:meetme_newrelic_plugin][:postgresql][:password] %>
+    superuser: <%= node[:meetme_newrelic_plugin][:postgresql][:superuser] %>
+    relation_stats: <%= node[:meetme_newrelic_plugin][:postgresql][:relation_stats] %>
+<% end %>
+
 <% if node[:meetme_newrelic_plugin][:rabbitmq][:enable] %>
   rabbitmq:
     name: <%= node[:meetme_newrelic_plugin][:rabbitmq][:name] %>
@@ -62,6 +73,19 @@ Application:
     password: <%= node[:meetme_newrelic_plugin][:rabbitmq][:password] %>
     verify_ssl_cert: <%= node[:meetme_newrelic_plugin][:rabbitmq][:verify_ssl_cert] %>
 <% end %>
+
+<% if node[:meetme_newrelic_plugin][:uwsgi][:enable] %>
+  uwsgi:
+    name: <%= node[:meetme_newrelic_plugin][:uwsgi][:name] %>
+    host: <%= node[:meetme_newrelic_plugin][:uwsgi][:host] %>
+    port: <%= node[:meetme_newrelic_plugin][:uwsgi][:port] %>
+    <% unless node[:meetme_newrelic_plugin][:uwsgi][:path].nil?  %>path: <%= node[:meetme_newrelic_plugin][:uwsgi][:path] %><% end %>
+<% end %>
+
+default[:meetme_newrelic_plugin][:uwsgi][:name] = 'localhost'
+default[:meetme_newrelic_plugin][:uwsgi][:host] = 'localhost'
+default = 1717
+default[:meetme_newrelic_plugin][:uwsgi][:path] = '/path/to/unix/socket'
 
 Daemon:
   user: <%= node[:meetme_newrelic_plugin][:user] %>
