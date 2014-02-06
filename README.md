@@ -22,6 +22,12 @@ Attributes
 * `node[:meetme_newrelic_plugin][:user]` -  the user that runs the application 
 * `node[:meetme_newrelic_plugin][:group]` -  group for application file permissions 
 
+#### meetme-newrelic-plugin::memcached
+* `node[:meetme_newrelic_plugin][:memcached][:name]` - hostname memcached instance is running on
+* `node[:meetme_newrelic_plugin][:memcached][:host]` - host memcached instance is running on
+* `node[:meetme_newrelic_plugin][:memcached][:port]` - port memcached is listening on
+* `node[:meetme_newrelic_plugin][:memcached][:path]` - path of unix socket (if memcached is using one)
+
 #### meetme-newrelic-plugin::mongodb
 * `node[:meetme_newrelic_plugin][:mongodb][:host]` - host mongodb instance is running on
 * `node[:meetme_newrelic_plugin][:mongodb][:port]` - port mongdb is listening on
@@ -32,6 +38,21 @@ Attributes
 * `node[:meetme_newrelic_plugin][:mongodb][:admin_password_key]` - key for admin password
 * `node[:meetme_newrelic_plugin][:mongodb][:db_username_key]` - key for db username
 * `node[:meetme_newrelic_plugin][:mongodb][:db_password_key]` - key for db password
+
+#### meetme-newrelic-plugin::nginx
+* `node[:meetme_newrelic_plugin][:nginx][:name]` - hostname nginx is running on
+* `node[:meetme_newrelic_plugin][:nginx][:host]` - host nginx is listening on
+* `node[:meetme_newrelic_plugin][:nginx][:port]` - port nginx is listening on
+* `node[:meetme_newrelic_plugin][:nginx][:path]` - path of nginx stub status page
+* `node[:meetme_newrelic_plugin][:nginx][:verify_ssl_cert]` - verify ssl certificate flag
+
+#### meetme-newrelic-plugin::php_fpm
+* `node[:meetme_newrelic_plugin][:php_fpm][:name]` - hostname php-fpm is running on
+* `node[:meetme_newrelic_plugin][:php_fpm][:scheme]` - fpm scheme (ex: http or https)
+* `node[:meetme_newrelic_plugin][:php_fpm][:host]` - host where fpm status page is listening
+* `node[:meetme_newrelic_plugin][:php_fpm][:port]` - port where fpm status page is listening
+* `node[:meetme_newrelic_plugin][:php_fpm][:path]` - path of fpm status page 
+* `node[:meetme_newrelic_plugin][:php_fpm][:query]` - query type (ex: json)
 
 
 Usage
