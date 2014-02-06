@@ -82,11 +82,6 @@ Application:
     <% unless node[:meetme_newrelic_plugin][:uwsgi][:path].nil?  %>path: <%= node[:meetme_newrelic_plugin][:uwsgi][:path] %><% end %>
 <% end %>
 
-default[:meetme_newrelic_plugin][:uwsgi][:name] = 'localhost'
-default[:meetme_newrelic_plugin][:uwsgi][:host] = 'localhost'
-default = 1717
-default[:meetme_newrelic_plugin][:uwsgi][:path] = '/path/to/unix/socket'
-
 Daemon:
   user: <%= node[:meetme_newrelic_plugin][:user] %>
   pidfile: <%= node[:meetme_newrelic_plugin][:run_dir] %>/newrelic_plugin_agent.pid

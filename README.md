@@ -68,6 +68,7 @@ Attributes
 * `node[:meetme_newrelic_plugin][:postgresql][:dbname]` - db to monitor
 * `node[:meetme_newrelic_plugin][:postgresql][:password]` - postgresql password
 * `node[:meetme_newrelic_plugin][:postgresql][:superuser]` - hostname uwsgi is running on
+* `node[:meetme_newrelic_plugin][:postgresql][:psycopg2_install_method]` - pip || package - install method for postgresql client driver 
 
 #### meetme-newrelic-plugin::uwsgi
 * `node[:meetme_newrelic_plugin][:uwsgi][:name]` - hostname uwsgi is running on
