@@ -61,7 +61,9 @@ Application:
     dbname: <%= node[:meetme_newrelic_plugin][:postgresql][:dbname] %>
     password: <%= node[:meetme_newrelic_plugin][:postgresql][:password] %>
     superuser: <%= node[:meetme_newrelic_plugin][:postgresql][:superuser] %>
+    <% if node[:meetme_newrelic_plugin][:postgresql][:relation_stats] %>
     relation_stats: <%= node[:meetme_newrelic_plugin][:postgresql][:relation_stats] %>
+    <% end %>
 <% end %>
 
 <% if node[:meetme_newrelic_plugin][:rabbitmq][:enable] %>
