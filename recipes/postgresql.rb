@@ -9,7 +9,6 @@ if node[:meetme_newrelic_plugin][:postgresql][:psycopg2_install_method] == 'pack
   end
 
 elsif node[:meetme_newrelic_plugin][:postgresql][:psycopg2_install_method] == 'pip'
-  include_recipe 'python'
   include_recipe 'python::pip'
 
   #install the Python PostgreSQL driver
