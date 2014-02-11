@@ -3,7 +3,6 @@
 # Recipe:: default
 #
 
-include_recipe "python::#{node[:python][:install_method]}"
 include_recipe "python::pip"
 
 Chef::Log.info(node[:python][:install_method])

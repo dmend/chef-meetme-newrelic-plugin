@@ -22,6 +22,13 @@ Attributes
 * `node[:meetme_newrelic_plugin][:user]` -  the user that runs the application 
 * `node[:meetme_newrelic_plugin][:group]` -  group for application file permissions 
 
+#### meetme-newrelic-plugin::elasticsearch
+* `node[:meetme_newrelic_plugin][:elasticsearch][:clustername]` - name of es cluster
+* `node[:meetme_newrelic_plugin][:elasticsearch][:host]` - hostname for es node to monitor
+* `node[:meetme_newrelic_plugin][:elasticsearch][:port]` - port es is listening on
+* `node[:meetme_newrelic_plugin][:elasticsearch][:scheme]` - http (protocol for connection)
+
+
 #### meetme-newrelic-plugin::memcached
 * `node[:meetme_newrelic_plugin][:memcached][:name]` - hostname memcached instance is running on
 * `node[:meetme_newrelic_plugin][:memcached][:host]` - host memcached instance is running on
@@ -54,6 +61,20 @@ Attributes
 * `node[:meetme_newrelic_plugin][:php_fpm][:path]` - path of fpm status page 
 * `node[:meetme_newrelic_plugin][:php_fpm][:query]` - query type (ex: json)
 
+#### meetme-newrelic-plugin::postgresql
+* `node[:meetme_newrelic_plugin][:postgresql][:host]` - host address where postgresql is running
+* `node[:meetme_newrelic_plugin][:postgresql][:port]` - port postgresql is listening
+* `node[:meetme_newrelic_plugin][:postgresql][:user]` - postgresql user
+* `node[:meetme_newrelic_plugin][:postgresql][:dbname]` - db to monitor
+* `node[:meetme_newrelic_plugin][:postgresql][:password]` - postgresql password
+* `node[:meetme_newrelic_plugin][:postgresql][:superuser]` - hostname uwsgi is running on
+* `node[:meetme_newrelic_plugin][:postgresql][:psycopg2_install_method]` - pip || package - install method for postgresql client driver 
+
+#### meetme-newrelic-plugin::uwsgi
+* `node[:meetme_newrelic_plugin][:uwsgi][:name]` - hostname uwsgi is running on
+* `node[:meetme_newrelic_plugin][:uwsgi][:host]` - host address uwsgi is runnin on
+* `node[:meetme_newrelic_plugin][:uwsgi][:port]` - port uwsgi is running on
+* `node[:meetme_newrelic_plugin][:uwsgi][:path]` - '/path/to/unix/socket' only set if using unix socket over host:port
 
 Usage
 -----
