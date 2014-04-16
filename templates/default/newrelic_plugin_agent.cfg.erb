@@ -76,6 +76,14 @@ Application:
     verify_ssl_cert: <%= node[:meetme_newrelic_plugin][:rabbitmq][:verify_ssl_cert] %>
 <% end %>
 
+<% if node[:meetme_newrelic_plugin][:redis][:enable] %>
+  redis:
+    name: <%= node[:meetme_newrelic_plugin][:redis][:name] %>
+    host: <%= node[:meetme_newrelic_plugin][:redis][:host] %>
+    port: <%= node[:meetme_newrelic_plugin][:redis][:port] %>
+    <% unless node[:meetme_newrelic_plugin][:redis][:password].nil?  %>password: <%= node[:meetme_newrelic_plugin][:redis][:password] %><% end %>
+<% end %>
+
 <% if node[:meetme_newrelic_plugin][:uwsgi][:enable] %>
   uwsgi:
     name: <%= node[:meetme_newrelic_plugin][:uwsgi][:name] %>
