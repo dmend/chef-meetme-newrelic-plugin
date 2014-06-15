@@ -7,6 +7,14 @@ include_recipe "python::pip"
 
 Chef::Log.info(node[:python][:install_method])
 Chef::Log.info(node[:meetme_newrelic_plugin][:package_name])
+
+# Update setuptools in CentOS
+if platform_family?("rhel")
+  python_pip "setuptools" do
+    action :upgrade
+  end
+end
+
 #install the meet me newrelic plugin agent
 python_pip node[:meetme_newrelic_plugin][:package_name] do
   action :install
